@@ -1,0 +1,37 @@
+apply plugin: Plugins.androidApplication
+apply from: "$rootDir/${GradleName.common}"
+
+android {
+
+    defaultConfig {
+        applicationId "com.tracker.app"
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            useProguard false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            testCoverageEnabled true
+        }
+
+    }
+    dynamicFeatures = [Module.splash]
+
+    dexOptions {
+                preDexLibraries false
+            }
+}
+
+dependencies {
+    implementation project(Module.map)
+    implementation project(Module.presentation)
+    implementation project(Module.data)
+    implementation 'org.slf4j:slf4j-api:1.7.28'
+    implementation 'com.sha.kamel:rx-location-settings-request:1.0.4@aar'
+}

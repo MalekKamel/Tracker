@@ -1,0 +1,27 @@
+apply from: "$rootDir/${GradleName.commonAndroidLib}"
+
+android {
+    buildTypes {
+
+        release {
+            buildConfigField("String", "API_BASE_URL", "\"${Config.baseUrlProd}\"")
+        }
+
+        debug {
+            buildConfigField("String", "API_BASE_URL", "\"${Config.baseUrlDev}\"")
+        }
+
+    }
+}
+
+dependencies {
+    api project(Module.core)
+
+    api Deps.playServices_maps
+    api Deps.playServices_androidMaps
+    api Deps.playServices_location
+    api Deps.mapUtils
+
+    api Deps.sha_rxLocation
+
+}

@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+id btnCall
+id btnChat
+id btnDirections
+id map
+id tvDistanceAndTime
+id wButtons
+layout frag_map
+string no_route

@@ -1,0 +1,8 @@
+include ':app'
+include ':common:core'
+include ':common:data'
+include ':common:presentation'
+include ':common:maps'
+include ':feature:splash'
+include ':feature:map'
+include ':feature:head'

@@ -1,0 +1,7 @@
+apply from: "$rootDir/${GradleName.commonDynamicFeature}"
+
+dependencies {
+    implementation project(Module.app)
+    implementation project(Module.presentation)
+    implementation project(Module.data)
+}

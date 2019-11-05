@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <fragment android:id="@+id/map"
+        android:name="tracker.common.maps.TouchableMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/wButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        android:weightSum="10">
+
+        <ImageButton
+            android:id="@+id/btnCall"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_round_orange"
+            android:src="@android:drawable/stat_sys_phone_call" />
+
+        <Space
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/btnChat"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_round_orange"
+            android:src="@android:drawable/stat_notify_chat" />
+
+        <Space
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/btnDirections"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_round_orange"
+            android:src="@android:drawable/ic_menu_directions" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDistanceAndTime"
+        tools:text="Time and Distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_round_orange"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/map"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
