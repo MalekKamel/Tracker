@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">model</string>
     <string name="dismiss">Dismiss</string>
     <string name="retry">Retry</string>
     <string name="oops_something_went_wrong">Oops, something went wrong.</string>

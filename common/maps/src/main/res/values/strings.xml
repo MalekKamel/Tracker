@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">maps</string>
     <string name="time">Time</string>
     <string name="distance">Distance</string>
 </resources>

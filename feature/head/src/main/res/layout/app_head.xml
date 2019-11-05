@@ -7,7 +7,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <!--Profile image for the chat head.-->
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -15,12 +14,11 @@
         android:src="@mipmap/ic_launcher"
         tools:ignore="ContentDescription"/>
 
-    <!--Close button-->
     <ImageView
         android:id="@+id/btnDismiss"
         android:layout_width="26dp"
         android:layout_height="26dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:src="@android:drawable/ic_menu_close_clear_cancel"
         tools:ignore="ContentDescription" />
 
