@@ -2,6 +2,7 @@
 Tracker represents a real world app example: it's a suitable showcase for all the advantages that architecture components bring, has all features that would make it a modular, scalable, testable and maintainable app.
 
 <img src="https://github.com/ShabanKamell/Tracker/blob/master/blob/raw/map_shot.png" height="500"> <img src="https://github.com/ShabanKamell/Tracker/blob/master/blob/raw/app_head.png" height="500">
+
 screenshots of Map and App Head
 
 ## Stack
