@@ -3,6 +3,8 @@ Tracker represents a real world app example: it's a suitable showcase for all th
 
 <img src="https://github.com/ShabanKamell/Tracker/blob/master/blob/raw/map_shot.png" height="500"> <img src="https://github.com/ShabanKamell/Tracker/blob/master/blob/raw/app_head.png" height="500">
 
+screenshots of Map and App Head
+
 ## Stack
  - [ ] Kotlin
  - [ ] MVVM
