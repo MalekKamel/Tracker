@@ -9,19 +9,19 @@ import io.reactivex.Flowable
 import io.reactivex.Single
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import org.koin.java.KoinJavaComponent
 import tracker.common.data.DataManager
 import tracker.common.maps.commaSeparated
 import tracker.common.maps.directions.RxDirectionsApi
 import tracker.common.presentation.vm.BaseViewModel
 
 val mapModule = module {
-    viewModel { MapVm(get(), get(), get()) }
+    viewModel { MapVm(get(), get()) }
     factory { RxLocation() }
     factory { RxDirectionsApi }
 }
 
 class MapVm(dataManager: DataManager,
-            private val rxLocation: RxLocation,
             private val rxDirectionsApi: RxDirectionsApi
 ) : BaseViewModel(dataManager) {
 
@@ -38,7 +38,8 @@ class MapVm(dataManager: DataManager,
     }
 
     fun currentLocation(activity: FragmentActivity): Single<Location> {
-        return  rxLocation.retrieveCurrentLocation(activity)
+        return KoinJavaComponent.get(RxLocation::class.java)
+                .retrieveCurrentLocation(activity)
     }
 
 }

@@ -18,7 +18,7 @@ import org.mockito.Mockito.any
 import tracker.common.maps.directions.RxDirectionsApi
 
 
-class SearchVmTest : BaseUnitTest() {
+class MapFragTest : BaseUnitTest() {
 
     private val vm: MapVm by inject()
 
