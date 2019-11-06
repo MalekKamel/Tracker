@@ -12,8 +12,6 @@ import tracker.common.data.DataManager
 import tracker.common.data.network.api.ApiInterface
 import tracker.common.data.network.interceptor.TokenInterceptor
 import tracker.common.data.pref.SharedPref
-import tracker.common.data.restaurant.RestaurantDataSrc
-import tracker.common.data.restaurant.RestaurantsRepo
 import tracker.common.data.rx.SchedulerProvider
 import tracker.common.data.rx.SchedulerProviderImpl
 import retrofit2.Retrofit
@@ -29,10 +27,7 @@ private val loadFeature by lazy {
 }
 
 val presentationModule = module {
-    factory { RestaurantsRepo(get()) }
-    factory { RestaurantDataSrc(get()) }
-
-    single { DataManager(get(), get()) }
+    single { DataManager(get()) }
     single { TokenInterceptor(get()) }
     single { SharedPref(get()) }
     single<SchedulerProvider> { SchedulerProviderImpl() }
