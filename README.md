@@ -5,6 +5,20 @@
 
 Tracker represents a real world app example: it provides a fairly complex set of functionalities, it's a suitable showcase for all the advantages that architecture components bring, has all features that would make it a modular, scalable, testable and maintainable app.
 
+## Stack
+ - [ ] Kotlin
+ - [ ] MVVM
+ - [ ] Clean Architecture
+ - [ ] Google Architecture Components
+ - [ ] Modular Architecture
+ - [ ] Repostory Pattern
+ - [ ] RxJava
+ - [ ] App Head (Chat Head) - Draw over other apps
+ - [ ] Google maps
+ - [ ] DirectionsApi
+ - [ ] Koin
+ - [ ] JUnit & Mockito
+
  ### License
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
