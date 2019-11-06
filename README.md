@@ -3,7 +3,7 @@ Tracker represents a real world app example: it's a suitable showcase for all th
 
 <img src="https://github.com/ShabanKamell/Tracker/blob/master/blob/raw/map_shot.png" height="500"> <img src="https://github.com/ShabanKamell/Tracker/blob/master/blob/raw/app_head.png" height="500">
 
-screenshots of Map and App Head
+Screenshots of Map and App Head
 
 ## Stack
  - [ ] Kotlin
@@ -18,6 +18,9 @@ screenshots of Map and App Head
  - [ ] DirectionsApi
  - [ ] Koin
  - [ ] JUnit & Mockito
+
+## Build The App
+To build the app, you need to add Google Map' API key in resources with ID `geo_api_code`.
 
  ### License
 ```
