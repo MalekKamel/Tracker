@@ -29,6 +29,8 @@ dependencies {
     implementation project(Module.map)
     implementation project(Module.presentation)
     implementation project(Module.data)
+    implementation project(Module.head)
+
     implementation 'org.slf4j:slf4j-api:1.7.28'
     implementation 'com.sha.kamel:rx-location-settings-request:1.0.4@aar'
 }

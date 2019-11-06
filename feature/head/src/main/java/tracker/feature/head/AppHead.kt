@@ -12,4 +12,8 @@ object AppHead {
         ServiceHelper.start(AppHeadService::class.java)
     }
 
+    fun hide() {
+        ServiceHelper.stop(AppHeadService::class.java)
+    }
+
 }

@@ -3,6 +3,7 @@ package com.tracker.app
 import android.os.Bundle
 import com.sha.kamel.navigator.FragmentNavigator
 import tracker.common.presentation.activity.BaseActivity
+import tracker.feature.head.AppHead
 import tracker.feature.splash.SplashFrag
 
 class MainActivity : BaseActivity() {
@@ -15,4 +16,15 @@ class MainActivity : BaseActivity() {
             FragmentNavigator(this)
                     .replace(SplashFrag.newInstance(), false)
     }
+
+    override fun onStart() {
+        super.onStart()
+        AppHead.hide()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        AppHead.show(this)
+    }
+
 }

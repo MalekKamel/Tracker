@@ -2354,7 +2354,6 @@ id buttonPanel
 id cancel_action
 id cancel_button
 id center
-id chat_head_root
 id checkbox
 id checked
 id chip
@@ -2664,7 +2663,6 @@ layout abc_tooltip
 layout amu_info_window
 layout amu_text_bubble
 layout amu_webview
-layout app_head
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

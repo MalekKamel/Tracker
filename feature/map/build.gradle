@@ -4,5 +4,4 @@ dependencies {
     implementation project(Module.presentation)
     implementation project(Module.data)
     implementation project(Module.maps)
-    implementation project(Module.head)
 }

@@ -2353,7 +2353,6 @@ int id buttonPanel 0x0
 int id cancel_action 0x0
 int id cancel_button 0x0
 int id center 0x0
-int id chat_head_root 0x0
 int id checkbox 0x0
 int id checked 0x0
 int id chip 0x0
@@ -2663,7 +2662,6 @@ int layout abc_tooltip 0x0
 int layout amu_info_window 0x0
 int layout amu_text_bubble 0x0
 int layout amu_webview 0x0
-int layout app_head 0x0
 int layout custom_dialog 0x0
 int layout design_bottom_navigation_item 0x0
 int layout design_bottom_sheet_dialog 0x0

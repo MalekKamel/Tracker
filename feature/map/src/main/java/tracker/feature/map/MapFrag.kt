@@ -15,9 +15,7 @@ import tracker.common.maps.drawRoute
 import tracker.common.maps.service.LocationTrackerService
 import tracker.common.presentation.ext.show
 import tracker.common.presentation.frag.BaseFrag
-import tracker.feature.head.AppHead
 import tracker.feature.map.di.injectFeature
-
 
 class MapFrag : BaseFrag<MapVm>() {
 
@@ -62,10 +60,6 @@ class MapFrag : BaseFrag<MapVm>() {
         }
     }
 
-    private fun showAppHead() {
-        activity?.apply { AppHead.show(this) }
-    }
-
     private fun setupMap() {
         mapSetup.setup(this, R.id.map)
         mapSetup.onMapReady = { loadRouteInfo() }
@@ -103,7 +97,6 @@ class MapFrag : BaseFrag<MapVm>() {
     override fun onStop() {
         super.onStop()
         mapSetup.disconnect()
-        showAppHead()
     }
 
 }
