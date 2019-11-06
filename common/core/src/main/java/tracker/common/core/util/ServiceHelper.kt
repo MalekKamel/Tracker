@@ -35,6 +35,14 @@ object ServiceHelper {
             service.startForeground(1, NotificationHelper.tripRunning())
     }
 
+
+    fun start(clazz: Class<*>) {
+        try {
+            CoreApp.context.startService(Intent(CoreApp.context, clazz))
+        } catch (e: Exception) {
+            CrashlyticsLogger.logAndPrint(e)
+        }
+    }
     fun start(intent: Intent) {
         try {
             CoreApp.context.startService(intent)

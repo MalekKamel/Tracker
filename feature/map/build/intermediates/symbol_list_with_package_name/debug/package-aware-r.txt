@@ -2348,7 +2348,6 @@ id btnBack
 id btnCall
 id btnChat
 id btnDirections
-id btnDismiss
 id btn_close
 id btn_retry
 id buttonPanel

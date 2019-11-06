@@ -2345,7 +2345,6 @@ id blocking
 id bottom
 id bounce
 id btnBack
-id btnDismiss
 id btn_close
 id btn_retry
 id buttonPanel

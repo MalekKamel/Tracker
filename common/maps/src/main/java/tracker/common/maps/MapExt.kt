@@ -3,12 +3,11 @@ package tracker.common.maps
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.maps.android.PolyUtil
 import com.google.maps.model.DirectionsResult
-import com.google.maps.model.DirectionsRoute
-import java.lang.StringBuilder
 
 fun GoogleMap.drawRoute(
         result : DirectionsResult,
@@ -22,14 +21,28 @@ fun GoogleMap.drawRoute(
     val decodedPath = PolyUtil.decode(route.overviewPolyline.encodedPath)
     addPolyline(PolylineOptions().addAll(decodedPath))
 
-    val cameraUpdate = CameraUpdateFactory.newLatLngZoom(LatLng(
+    val start = LatLng(
             route.legs[overview].startLocation.lat,
-            route.legs[overview].startLocation.lng),
-            7f
-    )
-    moveCamera(cameraUpdate)
+            route.legs[overview].startLocation.lng)
+
+    val end = LatLng(
+            route.legs[overview].endLocation.lat,
+            route.legs[overview].endLocation.lng)
+
+    moveToRouteBound(start, end)
 
     if (addMarkers) addMarkersToRoute(result = result)
+}
+
+fun GoogleMap.moveToRouteBound(start: LatLng, end: LatLng) {
+    val bounds =  LatLngBounds.Builder()
+            .include(start)
+            .include(end)
+            .build()
+
+    val cameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, 100)
+
+    moveCamera(cameraUpdate)
 }
 
 fun GoogleMap.addMarkersToRoute(result: DirectionsResult, overview: Int = 0) {

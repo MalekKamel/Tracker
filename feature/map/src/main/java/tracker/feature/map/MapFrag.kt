@@ -1,6 +1,5 @@
 package tracker.feature.map
 
-import android.content.Intent
 import android.os.Bundle
 import com.google.maps.model.DirectionsResult
 import com.sha.kamel.navigator.ActivityNavigator
@@ -14,11 +13,9 @@ import tracker.common.maps.GoogleMapSetup
 import tracker.common.maps.MapRouteHelper
 import tracker.common.maps.drawRoute
 import tracker.common.maps.service.LocationTrackerService
-import tracker.common.presentation.SystemOverlayHelper
 import tracker.common.presentation.ext.show
 import tracker.common.presentation.frag.BaseFrag
 import tracker.feature.head.AppHead
-import tracker.feature.head.AppHeadService
 import tracker.feature.map.di.injectFeature
 
 
@@ -58,7 +55,6 @@ class MapFrag : BaseFrag<MapVm>() {
                             )
                             ActivityNavigator(this).showRouteInGoogleMap(route)
 
-                            showAppHead()
                         })
                         .disposeBy(vm.disposables)
 
@@ -107,6 +103,7 @@ class MapFrag : BaseFrag<MapVm>() {
     override fun onStop() {
         super.onStop()
         mapSetup.disconnect()
+        showAppHead()
     }
 
 }

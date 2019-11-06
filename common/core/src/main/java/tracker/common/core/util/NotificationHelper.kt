@@ -66,13 +66,13 @@ object NotificationHelper {
     }
 
     private fun createNotificationChannel() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            val chan1 = NotificationChannel(Channel.PRIMARY.value,
-                    CoreApp.string(R.string.app_name), NotificationManager.IMPORTANCE_DEFAULT)
-            chan1.lightColor = ContextCompat.getColor(CoreApp.context, R.color.orange)
-            chan1.lockscreenVisibility = Notification.VISIBILITY_PRIVATE
-            getManager().createNotificationChannel(chan1)
-        }
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O)  return
+
+        val channel = NotificationChannel(Channel.PRIMARY.value,
+                CoreApp.string(R.string.app_name), NotificationManager.IMPORTANCE_DEFAULT)
+        channel.lightColor = ContextCompat.getColor(CoreApp.context, R.color.orange)
+        channel.lockscreenVisibility = Notification.VISIBILITY_PRIVATE
+        getManager().createNotificationChannel(channel)
     }
 
     private fun getManager(): NotificationManager {

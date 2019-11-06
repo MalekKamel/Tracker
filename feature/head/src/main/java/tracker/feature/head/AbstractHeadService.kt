@@ -1,15 +1,13 @@
 package tracker.feature.head
 
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.os.IBinder
-import android.view.View
 import android.view.WindowManager
-import restaurants.feature.head.R
 
 abstract class AbstractHeadService : Service() {
 
-    var mWindowManager: WindowManager? = null
     lateinit var head: AppHeadView
 
     abstract val layoutId: Int
@@ -32,7 +30,8 @@ abstract class AbstractHeadService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        mWindowManager?.removeView(head)
+        val windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        windowManager.removeView(head)
     }
 
 }

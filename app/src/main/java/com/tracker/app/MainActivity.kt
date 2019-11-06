@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.sha.kamel.navigator.FragmentNavigator
 import tracker.common.presentation.activity.BaseActivity
 import tracker.feature.map.MapFrag
+import tracker.feature.splash.SplashFrag
 
 class MainActivity : BaseActivity() {
 
@@ -13,6 +14,6 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null)
             FragmentNavigator(this)
-                    .replace(MapFrag.newInstance(), false)
+                    .replace(SplashFrag.newInstance(), false)
     }
 }

@@ -14,12 +14,4 @@
         android:src="@mipmap/ic_launcher"
         tools:ignore="ContentDescription"/>
 
-    <ImageView
-        android:id="@+id/btnDismiss"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="40dp"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
-        tools:ignore="ContentDescription" />
-
 </tracker.feature.head.AppHeadView>

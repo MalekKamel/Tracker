@@ -2347,7 +2347,6 @@ int id btnBack 0x0
 int id btnCall 0x0
 int id btnChat 0x0
 int id btnDirections 0x0
-int id btnDismiss 0x0
 int id btn_close 0x0
 int id btn_retry 0x0
 int id buttonPanel 0x0
