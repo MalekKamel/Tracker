@@ -7,6 +7,11 @@ import androidx.annotation.StringRes
 
 open class CoreApp: Application() {
 
+    override fun onCreate() {
+        super.onCreate()
+        context = applicationContext
+    }
+
     companion object {
 
         @SuppressLint("StaticFieldLeak")
