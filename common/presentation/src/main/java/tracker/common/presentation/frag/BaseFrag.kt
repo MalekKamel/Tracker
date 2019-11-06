@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import tracker.common.core.util.CrashlyticsLogger
+import tracker.common.presentation.BaseView
 import tracker.common.presentation.R
 import tracker.common.presentation.activity.BaseActivity
-import tracker.common.presentation.BaseView
 import tracker.common.presentation.vm.BaseViewModel
-import tracker.common.core.util.CrashlyticsLogger
 
 abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
 
@@ -81,10 +81,6 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
 
     override fun fragment(): BaseFrag<*> {
         return this
-    }
-
-    override fun baseViewModel(): BaseViewModel? {
-        return vm
     }
 
     private fun enableBackNavigation() {

@@ -3,9 +3,8 @@ package tracker.common.presentation.dialog
 import kotlinx.android.synthetic.main.frag_dialog_retry.*
 import tracker.common.presentation.R
 import tracker.common.presentation.frag.BaseDialogFrag
-import tracker.common.presentation.vm.DefaultViewModel
 
-class RetryDialogFrag : BaseDialogFrag<DefaultViewModel>() {
+class RetryDialogFrag : BaseDialogFrag() {
 
     private var retryCallback: (() -> Unit)? = null
     private var closeCallback: (() -> Unit)? = null
@@ -34,23 +33,19 @@ class RetryDialogFrag : BaseDialogFrag<DefaultViewModel>() {
 
     companion object {
 
-        // Logic here  ------------------------------
-
         fun newInstance(retryCallback: () -> Unit, closeCallback: () -> Unit): RetryDialogFrag {
-            val fragment = RetryDialogFrag()
-            fragment.retryCallback = retryCallback
-            fragment.closeCallback = closeCallback
-            //        fragment.e = e;
-            return fragment
+            return RetryDialogFrag().apply {
+                this.retryCallback = retryCallback
+                this.closeCallback = closeCallback
+            }
         }
 
         fun newInstance(message: String, retryCallback: () -> Unit, closeCallback: () -> Unit): RetryDialogFrag {
-            val fragment = RetryDialogFrag()
-            fragment.message = message
-            fragment.retryCallback = retryCallback
-            fragment.closeCallback = closeCallback
-            //        fragment.e = e;
-            return fragment
+            return RetryDialogFrag().apply {
+                this.message = message
+                this.retryCallback = retryCallback
+                this.closeCallback = closeCallback
+            }
         }
     }
 }

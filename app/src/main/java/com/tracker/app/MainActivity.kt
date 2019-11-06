@@ -3,7 +3,6 @@ package com.tracker.app
 import android.os.Bundle
 import com.sha.kamel.navigator.FragmentNavigator
 import tracker.common.presentation.activity.BaseActivity
-import tracker.feature.map.MapFrag
 import tracker.feature.splash.SplashFrag
 
 class MainActivity : BaseActivity() {

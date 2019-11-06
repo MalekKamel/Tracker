@@ -14,17 +14,11 @@ import androidx.annotation.Nullable
 import androidx.fragment.app.FragmentActivity
 import com.sha.kamel.navigator.FragmentNavigator
 import com.trello.rxlifecycle2.components.support.RxDialogFragment
-import tracker.common.presentation.activity.BaseActivity
-import tracker.common.presentation.BaseView
-import tracker.common.presentation.vm.BaseViewModel
 import tracker.common.core.util.CrashlyticsLogger
+import tracker.common.presentation.BaseView
+import tracker.common.presentation.activity.BaseActivity
 
-/**
- * Created by Sha on 9/24/17.
- */
-
-abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView {
-    var vm: VM? = null
+abstract class BaseDialogFrag: RxDialogFragment(), BaseView {
     var isShown: Boolean = false
         protected set
 
@@ -95,15 +89,11 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
         return activity
     }
 
-    override fun dialogFragment(): BaseDialogFrag<*> {
+    override fun dialogFragment(): BaseDialogFrag {
         return this
     }
 
-    override fun baseViewModel(): BaseViewModel? {
-        return vm
-    }
-
-    open fun show(activity: FragmentActivity): BaseDialogFrag<VM> {
+    open fun show(activity: FragmentActivity): BaseDialogFrag {
         try {
             if (!isShown)
                 FragmentNavigator(activity).showDialogFragment(this)
@@ -114,7 +104,7 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
         return this
     }
 
-    fun onDismissListener(callback: () -> Unit): BaseDialogFrag<VM> {
+    fun onDismissListener(callback: () -> Unit): BaseDialogFrag {
         this.onDismissListener = callback
         return this
     }
@@ -134,7 +124,5 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
     override fun getContext(): Context? {
         return activity
     }
-
-
 
 }

@@ -4,21 +4,15 @@ import androidx.lifecycle.ViewModel
 import com.sha.rxrequester.Presentable
 import com.sha.rxrequester.RxRequester
 import io.reactivex.disposables.CompositeDisposable
-import tracker.common.presentation.rx.ServerErrorHandler
-import tracker.common.presentation.rx.IoExceptionHandler
-import tracker.common.presentation.rx.NoSuchElementHandler
-import tracker.common.presentation.rx.OutOfMemoryErrorHandler
-import tracker.common.presentation.rx.ErrorContract
+import tracker.common.data.DataManager
 import tracker.common.presentation.BaseView
 import tracker.common.presentation.R
-import tracker.common.data.DataManager
-import tracker.common.data.pref.SharedPref
+import tracker.common.presentation.rxrequester.*
 
 open class BaseViewModel(val dm: DataManager)
     : ViewModel() {
 
-    lateinit var view: BaseView
-    var pref: SharedPref = dm.pref
+    var view: BaseView? = null
     val disposables: CompositeDisposable = CompositeDisposable()
     var requester: RxRequester
 
@@ -29,25 +23,24 @@ open class BaseViewModel(val dm: DataManager)
     private fun setupRequester(): RxRequester {
         val presentable = object: Presentable {
             override fun showError(error: String) {
-                view.showErrorInFlashBar(error)
+                view?.showErrorInFlashBar(error)
             }
 
             override fun showError(error: Int) {
-                view.showErrorInFlashBar(error)
+                view?.showErrorInFlashBar(error)
             }
 
             override fun showLoading() {
-                view.showLoading()
+                view?.showLoading()
             }
 
             override fun hideLoading() {
-                view.hideLoading()
+                view?.hideLoading()
             }
 
             override fun onHandleErrorFailed(throwable: Throwable) {
-                view.showErrorInFlashBar(R.string.oops_something_went_wrong)
+                view?.showErrorInFlashBar(R.string.oops_something_went_wrong)
             }
-
         }
 
        val requester = RxRequester.create(ErrorContract::class.java, presentable)

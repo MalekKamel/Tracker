@@ -2,25 +2,17 @@ package tracker.common.presentation
 
 import android.content.Context
 import android.widget.Toast
+import tracker.common.core.util.FlashBarHelper
+import tracker.common.core.util.ThreadUtil
 import tracker.common.presentation.activity.BaseActivity
 import tracker.common.presentation.dialog.LoadingDialog
 import tracker.common.presentation.dialog.LoadingDialogHelper
 import tracker.common.presentation.dialog.RetryDialogFrag
 import tracker.common.presentation.dialog.info.InfoDialog
-import tracker.common.presentation.dialog.info.InfoDialogHelper
 import tracker.common.presentation.frag.BaseDialogFrag
 import tracker.common.presentation.frag.BaseFrag
-import tracker.common.presentation.vm.BaseViewModel
-import tracker.common.core.util.FlashbarUtil
-import tracker.common.core.util.ThreadUtil
-
-/**
- * Created by Sha on 9/14/17.
- */
 
 interface BaseView {
-
-    fun baseViewModel(): BaseViewModel?
 
     fun activity(): BaseActivity?
 
@@ -93,8 +85,6 @@ interface BaseView {
 
             if (msg == null) return@runOnUiThread
 
-            hideDialogs()
-
             val infoDialog = InfoDialog.newInstance(
                     type,
                     msg,
@@ -103,8 +93,6 @@ interface BaseView {
             )
 
             infoDialog.show(activity()!!)
-
-            InfoDialogHelper.add(infoDialog)
         }
     }
 
@@ -116,28 +104,16 @@ interface BaseView {
         LoadingDialogHelper.hide()
     }
 
-    fun hideDialogs() {
-        ThreadUtil.runOnUiThread {
-
-            LoadingDialogHelper.instances.forEach { it?.dismiss() }
-            InfoDialogHelper.instances.forEach { it?.dismiss() }
-        }
-    }
-
     fun fragment(): BaseFrag<*> {
         throw UnsupportedOperationException()
     }
 
-    fun dialogFragment(): BaseDialogFrag<*> {
+    fun dialogFragment(): BaseDialogFrag {
         throw UnsupportedOperationException()
     }
 
     fun toast(resId: Int) {
         Toast.makeText(context(), resId, Toast.LENGTH_LONG).show()
-    }
-
-    fun invalidateToolbar() {
-
     }
 
     fun showErrorInFlashBar(msg: String) {
@@ -152,7 +128,7 @@ interface BaseView {
         ThreadUtil.runOnUiThread {
             if (activity() == null) return@runOnUiThread
 
-            FlashbarUtil.show(
+            FlashBarHelper.show(
                     status.statusMessage,
                     status.getStatusColor(),
                     activity()!!

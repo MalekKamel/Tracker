@@ -54,18 +54,8 @@ class StringBuilderUtil {
         return this
     }
 
-    fun openBracketAr(): StringBuilderUtil {
-        sb.append(")")
-        return this
-    }
-
     fun closeBracket(): StringBuilderUtil {
         sb.append(")")
-        return this
-    }
-
-    fun closeBracketAr(): StringBuilderUtil {
-        sb.append("(")
         return this
     }
 

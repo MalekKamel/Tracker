@@ -14,7 +14,6 @@ class StatusItem(var statusId: Int, var statusMessage: String) {
     }
 
     companion object {
-
         val EMPTY = 0
         val ERROR = 1
         val SEND_FAILED = 2

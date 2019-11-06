@@ -6,10 +6,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
-/**
- * Created by Sha on 1/7/18.
- */
-
 fun GoogleMap.add(
         location: LatLng,
         title: String,

@@ -6,10 +6,6 @@ import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 
-/**
- * Created by Sha on 11/20/17.
- */
-
 object SystemOverlayHelper {
     private const val OVERLAY_REQUEST_CODE = 251
 

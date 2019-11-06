@@ -44,15 +44,23 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    testImplementation Deps.test_junit
-    testImplementation Deps.androidx_junit
-    testImplementation Deps.androidx_espressoCore
-    testImplementation Deps.koin_test
-    testImplementation Deps.test_jUnitParams
-    testImplementation Deps.test_kotlinTestJunit5
-    testImplementation Deps.test_kotlinTestExtKoin
+    testImplementation TestDeps.test_junit
+    testImplementation TestDeps.androidx_junit
+    testImplementation TestDeps.androidx_espressoCore
+    testImplementation TestDeps.test_jUnitParams
+    testImplementation TestDeps.test_kotlinTestJunit5
+    testImplementation TestDeps.test_kotlinTestExtKoin
 
-    androidTestApi(Deps.test_espressoCore, {
+    testImplementation TestDeps.koin_test
+    testImplementation TestDeps.koin_android_ext
+
+    testImplementation TestDeps.mockito_core
+    testImplementation TestDeps.mockito_kotlin
+
+    testImplementation TestDeps.test_junit
+    testImplementation TestDeps.androidx_core_testing
+
+    androidTestApi(TestDeps.test_espressoCore, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 

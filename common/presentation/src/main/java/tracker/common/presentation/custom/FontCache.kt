@@ -24,7 +24,7 @@ object FontCache {
         return typeface(Font.DEFAULT, context)
     }
 
-    fun typeface(fontRes: Int, context: Context): Typeface? {
+    private fun typeface(fontRes: Int, context: Context): Typeface? {
         var typeface = fontCache[fontRes]
 
         if (typeface == null) {

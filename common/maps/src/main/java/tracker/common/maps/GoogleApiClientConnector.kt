@@ -7,10 +7,6 @@ import com.google.android.gms.common.api.GoogleApiClient
 import tracker.common.core.CoreApp
 import tracker.common.core.util.CrashlyticsLogger
 
-/**
- * Created by Sha on 1/7/18.
- */
-
 object GoogleApiClientConnector {
     private var client: GoogleApiClient? = null
 

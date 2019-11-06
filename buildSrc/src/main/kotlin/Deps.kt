@@ -33,7 +33,7 @@ object Versions {
     const val androidx_lifeCycle = "2.0.0-rc01"
     const val sha_formValidator = "1.0.0"
     const val sha_navigator = "1.5.0"
-    const val sha_rxRequester = "0.5.0"
+    const val sha_rxRequester = "0.6.0"
     const val sha_rxLocation = "1.9.0@aar"
     const val flashBar = "1.0.3"
     const val androidx_junit = "1.1.1"
@@ -45,17 +45,22 @@ object Versions {
     const val playServices_location = "16.0.0"
     const val mapUtils = "0.6.2"
 
+    const val mockito_core = "3.0.0"
+    const val hamcrest_all = "1.3"
+    const val androidx_core_testing = "2.1.0"
+    const val kotlinx_coroutine_test = "1.3.0"
+    const val robolectric = "4.3-beta-1"
+    const val espresso_contrib = "3.2.0"
+    const val esspresso_intent = "3.2.0"
+    const val truth = "0.44"
+    const val androidx_test_core_ktx = "1.2.1-alpha02"
+    const val androidx_test_ext_junit_ktx = "1.1.2-alpha02"
+    const val androidx_test_rules = "1.3.0-alpha02"
+    const val mockito_kotlin = "2.2.0"
+
 }
 
 object Deps {
-
-    // <editor-fold desc="test">
-    const val test_junit = "junit:junit:${Versions.test_junit}"
-    const val test_jUnitParams = "pl.pragmatists:JUnitParams:${Versions.test_jUnitParams}"
-    const val test_kotlinTestJunit5 = "io.kotlintest:kotlintest-runner-junit5:${Versions.test_kotlinTestJunit5}"
-    const val test_kotlinTestExtKoin = "io.kotlintest:kotlintest-extensions-koin:${Versions.test_kotlinTestExtKoin}"
-    const val test_espressoCore = "androidx.test.espresso:espresso-core:${Versions.test_espressoCore}"
-    // </editor-fold>
 
     // <editor-fold desc="intuit">
     const val sdp = "com.intuit.sdp:sdp-android:${Versions.intuit}"
@@ -68,7 +73,6 @@ object Deps {
     const val koin_viewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
     const val koin_java = "org.koin:koin-java:${Versions.koin}"
     const val koin_ext = "org.koin:koin-android-ext:${Versions.koin}"
-    const val koin_test = "org.koin:koin-android-ext:${Versions.koin}"
     // </editor-fold>
 
     // <editor-fold desc="arch">
@@ -87,8 +91,6 @@ object Deps {
     const val androidx_constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.androidx_constraintLayout}"
     const val androidx_lifeCycle = "androidx.lifecycle:lifecycle-extensions:${Versions.androidx_lifeCycle}"
     const val androidx_lifeCycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.androidx_lifeCycle}"
-    const val androidx_junit = "androidx.test.ext:junit:${Versions.androidx_junit}"
-    const val androidx_espressoCore = "androidx.test.espresso:espresso-core:${Versions.androidx_espressoCore}"
     const val androidx_coreKtx = "androidx.core:core-ktx:${Versions.androidx_coreKtx}"
     const val androidx_paging = "androidx.paging:paging-runtime:${Versions.androidx_paging}"
     // </editor-fold>
@@ -136,5 +138,40 @@ object Deps {
     const val sha_rxLocation = "com.sha.kamel:rx-location:${Versions.sha_rxLocation}"
 
     const val flashBar = "com.andrognito.flashbar:flashbar:${Versions.flashBar}"
+
+
+}
+
+object TestDeps {
+    const val koin_android_ext = "org.koin:koin-android-ext:${Versions.koin}"
+    const val koin_test = "org.koin:koin-test:${Versions.koin}"
+    const val androidx_espressoCore = "androidx.test.espresso:espresso-core:${Versions.androidx_espressoCore}"
+    const val androidx_junit = "androidx.test.ext:junit:${Versions.androidx_junit}"
+
+    const val test_jUnitParams = "pl.pragmatists:JUnitParams:${Versions.test_jUnitParams}"
+    const val test_kotlinTestJunit5 = "io.kotlintest:kotlintest-runner-junit5:${Versions.test_kotlinTestJunit5}"
+    const val test_kotlinTestExtKoin = "io.kotlintest:kotlintest-extensions-koin:${Versions.test_kotlinTestExtKoin}"
+    const val test_espressoCore = "androidx.test.espresso:espresso-core:${Versions.test_espressoCore}"
+
+    const val test_junit = "junit:junit:${Versions.test_junit}"
+
+    // <editor-fold desc="mockito">
+    const val mockito_core = "org.mockito:mockito-core:${Versions.mockito_core}"
+    const val mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockito_kotlin}"
+    // </editor-fold>
+
+    const val hamcrest_all = "org.hamcrest:hamcrest-all:${Versions.hamcrest_all}"
+    const val kotlinx_coroutine_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinx_coroutine_test}"
+    const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
+    const val espresso_contrib = "androidx.test.espresso:espresso-contrib:${Versions.espresso_contrib}"
+    const val esspresso_intent = "androidx.test.espresso:espresso-intents:${Versions.esspresso_intent}"
+    const val truth = "com.google.truth:truth:${Versions.truth}"
+
+    // <editor-fold desc="androidx">
+    const val androidx_test_core_ktx = "androidx.test:core-ktx:${Versions.androidx_test_core_ktx}"
+    const val androidx_test_ext_junit_ktx = "androidx.test.ext:junit-ktx:${Versions.androidx_test_ext_junit_ktx}"
+    const val androidx_test_rules = "androidx.test:rules:${Versions.androidx_test_rules}"
+    const val androidx_core_testing = "androidx.arch.core:core-testing:${Versions.androidx_core_testing}"
+    // </editor-fold>
 
 }

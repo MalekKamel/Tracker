@@ -1,12 +1,10 @@
 package tracker.common.presentation.dialog
 
+import tracker.common.core.util.ThreadUtil
 import tracker.common.presentation.R
 import tracker.common.presentation.frag.BaseDialogFrag
-import tracker.common.presentation.vm.BaseViewModel
-import tracker.common.core.util.ThreadUtil
-import tracker.common.data.DataManager
 
-class LoadingDialog(var isCancellable: Boolean = false) : BaseDialogFrag<LoadingVm>() {
+class LoadingDialog(var isCancellable: Boolean = false) : BaseDialogFrag() {
 
      override var layoutId: Int = R.layout.frag_dialog_loading
 
@@ -15,10 +13,7 @@ class LoadingDialog(var isCancellable: Boolean = false) : BaseDialogFrag<Loading
             return LoadingDialog(isCancellable)
         }
     }
-
 }
-
-class LoadingVm(dataManager: DataManager) : BaseViewModel(dataManager)
 
 object LoadingDialogHelper {
     var instances: MutableList<LoadingDialog?> = mutableListOf()

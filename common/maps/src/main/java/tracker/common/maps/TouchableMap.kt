@@ -16,7 +16,7 @@ class TouchableMap : SupportMapFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, parent: ViewGroup?, savedInstanceState: Bundle?): View? {
         mOriginalContentView = super.onCreateView(inflater, parent, savedInstanceState)
-        mTouchView = MapTouchableFrame(activity)
+        mTouchView = MapTouchableFrame(activity!!)
         mTouchView!!.addView(mOriginalContentView)
         return mTouchView
     }
@@ -29,7 +29,7 @@ class TouchableMap : SupportMapFragment() {
         this.motionEventCallback = onMotionEventListener
     }
 
-    internal inner class MapTouchableFrame(activity: Activity?) : FrameLayout(activity) {
+    internal inner class MapTouchableFrame(activity: Activity) : FrameLayout(activity) {
 
         override fun dispatchTouchEvent(event: MotionEvent): Boolean {
 

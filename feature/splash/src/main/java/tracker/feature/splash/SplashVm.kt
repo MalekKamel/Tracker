@@ -2,8 +2,8 @@ package tracker.feature.splash
 
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import tracker.common.presentation.vm.BaseViewModel
 import tracker.common.data.DataManager
+import tracker.common.presentation.vm.BaseViewModel
 
 /**
  * Created by Sha on 9/15/17.
