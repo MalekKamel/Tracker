@@ -1,14 +1,9 @@
-# Restaurants
+# Tracker
 
-<img src="https://github.com/ShabanKamell/Restaurants/blob/master/blob/raw/home.png" height="500">
+<img src="https://github.com/ShabanKamell/Tracker/blob/master/blob/raw/tracker_shot.png" height="500">
 
 
-Restaurants represents a real world app example: it provides a fairly complex set of functionalities, it's a suitable showcase for all the advantages that architecture components bring, has all features that would make it a modular, scalable, testable and maintainable app.
- 
- ### Credit
-- [ ] [Build a Modular Android App Architecture (Google I/O'19)](https://www.youtube.com/watch?v=PZBg5DIzNww)
-- [ ] [Plaid](https://github.com/android/plaid)
-- [ ] [Savepopulation's Movies](https://github.com/savepopulation/movies)
+Tracker represents a real world app example: it provides a fairly complex set of functionalities, it's a suitable showcase for all the advantages that architecture components bring, has all features that would make it a modular, scalable, testable and maintainable app.
 
  ### License
 ```
