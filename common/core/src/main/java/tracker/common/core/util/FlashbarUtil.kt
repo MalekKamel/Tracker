@@ -25,7 +25,7 @@ object FlashbarUtil {
                     .show()
         } catch (e: Exception) {
             e.printStackTrace()
-            CrashlyticsUtil.log(e)
+            CrashlyticsLogger.log(e)
         }
 
     }

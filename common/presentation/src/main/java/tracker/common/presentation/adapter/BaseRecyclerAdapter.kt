@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import tracker.common.presentation.frag.BaseDialogFrag
 import tracker.common.presentation.BaseView
-import tracker.common.core.util.CrashlyticsUtil
+import tracker.common.core.util.CrashlyticsLogger
 
 /**
  * Created by Sha on 4/20/17.
@@ -30,7 +30,7 @@ abstract class BaseRecyclerAdapter<M, VH
             holder.item = item
             holder.bindView(item)
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
 
     }

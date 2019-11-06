@@ -2829,6 +2829,7 @@ string no_data_entered_yet
 string no_memory_free_up_space
 string no_route
 string offline_internet
+string on_way
 string oops_something_went_wrong
 string password_toggle_content_description
 string path_password_eye

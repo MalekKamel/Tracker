@@ -9,7 +9,7 @@ import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import okhttp3.OkHttpClient
 import org.koin.java.KoinJavaComponent
-import tracker.common.core.util.CrashlyticsUtil
+import tracker.common.core.util.CrashlyticsLogger
 import java.io.File
 
 /**
@@ -62,7 +62,7 @@ class PicassoUtil {
 
             } catch (e: Exception) {
                 e.printStackTrace()
-                CrashlyticsUtil.log(e)
+                CrashlyticsLogger.log(e)
             }
 
         }

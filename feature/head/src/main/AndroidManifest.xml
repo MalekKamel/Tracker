@@ -15,7 +15,7 @@
     <application >
 
         <service
-            android:name="tracker.feature.head.AppHead"
+            android:name="tracker.feature.head.AppHeadService"
             android:enabled="true"
             android:exported="false"/>
     </application>

@@ -2835,6 +2835,7 @@ int string no_data_entered_yet 0x0
 int string no_memory_free_up_space 0x0
 int string no_route 0x0
 int string offline_internet 0x0
+int string on_way 0x0
 int string oops_something_went_wrong 0x0
 int string password_toggle_content_description 0x0
 int string path_password_eye 0x0

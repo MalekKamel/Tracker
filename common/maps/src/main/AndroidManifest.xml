@@ -1,1 +1,15 @@
-<manifest package="tracker.common.maps" />
+<manifest package="tracker.common.maps"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application >
+
+        <service
+            android:name=".service.LocationTrackerService"
+            android:enabled="true"
+            android:exported="false"/>
+
+    </application>
+
+</manifest>

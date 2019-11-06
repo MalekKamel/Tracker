@@ -43,14 +43,14 @@ ADDED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/
 		ADDED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml:13:22-75
 application
 ADDED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml:15:5-21:19
-service#tracker.feature.head.AppHead
+service#tracker.feature.head.AppHeadService
 ADDED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml:17:9-20:39
 	android:enabled
 		ADDED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml:19:13-35
 	android:exported
 		ADDED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml:18:13-56
+		ADDED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml:18:13-63
 uses-sdk
 INJECTED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/mac/Desktop/android/projects/me/task/Tracker/feature/head/src/main/AndroidManifest.xml

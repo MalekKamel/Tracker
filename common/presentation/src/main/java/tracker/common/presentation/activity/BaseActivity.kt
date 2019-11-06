@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import tracker.common.presentation.BaseView
 import tracker.common.presentation.vm.BaseViewModel
-import tracker.common.core.util.CrashlyticsUtil
+import tracker.common.core.util.CrashlyticsLogger
 
 abstract class BaseActivity
     : AppCompatActivity(), BaseView {
@@ -27,7 +27,7 @@ abstract class BaseActivity
             doOnCreate(savedInstanceState)
 
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
 
     }
@@ -37,7 +37,7 @@ abstract class BaseActivity
         try {
 
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
 
     }

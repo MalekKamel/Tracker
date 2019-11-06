@@ -17,7 +17,7 @@ import com.trello.rxlifecycle2.components.support.RxDialogFragment
 import tracker.common.presentation.activity.BaseActivity
 import tracker.common.presentation.BaseView
 import tracker.common.presentation.vm.BaseViewModel
-import tracker.common.core.util.CrashlyticsUtil
+import tracker.common.core.util.CrashlyticsLogger
 
 /**
  * Created by Sha on 9/24/17.
@@ -47,7 +47,7 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
             activity = getActivity() as BaseActivity
 
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
 
         isShown = true
@@ -61,7 +61,7 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
             setupUi()
             doOnViewCreated()
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
 
     }
@@ -108,7 +108,7 @@ abstract class BaseDialogFrag<VM : BaseViewModel> : RxDialogFragment(), BaseView
             if (!isShown)
                 FragmentNavigator(activity).showDialogFragment(this)
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
 
         return this

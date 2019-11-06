@@ -2,16 +2,14 @@ package tracker.feature.head
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.graphics.PixelFormat
 import android.os.Build
 import android.util.AttributeSet
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.WindowManager
 import android.widget.RelativeLayout
-import com.sha.kamel.navigator.modular.ActivityModuleNavigator
-import tracker.common.presentation.navigation.Activities
 
 class AppHeadView : RelativeLayout {
     
@@ -22,7 +20,9 @@ class AppHeadView : RelativeLayout {
     private var initialTouchY: Float = 0.toFloat()
 
     lateinit var params: WindowManager.LayoutParams
-    lateinit var onDismiss: () ->Unit
+    var onHeadClicked: ((AppHeadView) -> Unit)? = null
+
+    private lateinit var windowManager: WindowManager
 
     constructor(context: Context) : super(context) {
         setupParams()
@@ -39,6 +39,11 @@ class AppHeadView : RelativeLayout {
 
     init {
         setupParams()
+        setup()
+    }
+
+    private fun setup() {
+        windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     }
 
     private fun setupParams() {
@@ -83,12 +88,7 @@ class AppHeadView : RelativeLayout {
                 //we have to check if the previous action was ACTION_DOWN
                 //to identify if the user clicked the view or not.
                 if (lastAction == MotionEvent.ACTION_DOWN) {
-                    //Open the chat conversation click.
-                    ActivityModuleNavigator(context, context.packageName)
-                            .withFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                            .navigate(Activities.Main)
-                    //close the service and remove the chat heads
-                    onDismiss()
+                    onHeadClicked?.invoke(this)
                 }
                 lastAction = event.action
                 return true
@@ -101,14 +101,22 @@ class AppHeadView : RelativeLayout {
 
                 //Update the layout with new X & Y coordinate
 
-                (context.getSystemService(Context.WINDOW_SERVICE) as WindowManager)
-                        .updateViewLayout(this, params)
+                windowManager.updateViewLayout(this, params)
 
                 lastAction = event.action
                 return true
             }
 
             else -> return super.onTouchEvent(event)
+        }
+    }
+
+    companion object {
+        fun show(context: Context, layoutId: Int): AppHeadView {
+            val head = LayoutInflater.from(context).inflate(layoutId, null) as AppHeadView
+            val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+            windowManager.addView(head, head.params)
+            return head
         }
     }
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tracker</string>
+    <string name="on_way">you\'re on way..</string>
 </resources>

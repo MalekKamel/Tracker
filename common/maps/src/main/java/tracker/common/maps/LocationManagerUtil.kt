@@ -8,7 +8,7 @@ import android.location.GpsStatus.GPS_EVENT_STOPPED
 import android.location.LocationManager
 import android.os.Build
 import androidx.fragment.app.FragmentActivity
-import tracker.common.core.util.CrashlyticsUtil
+import tracker.common.core.util.CrashlyticsLogger
 
 /**
  * Created by Sha on 1/7/18.
@@ -30,7 +30,7 @@ object LocationManagerUtil {
             return isEnabled
         } catch (e: Exception) {
             e.printStackTrace()
-            CrashlyticsUtil.log(e)
+            CrashlyticsLogger.log(e)
         }
 
         return false

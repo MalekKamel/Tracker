@@ -11,7 +11,7 @@ import tracker.common.presentation.R
 import tracker.common.presentation.activity.BaseActivity
 import tracker.common.presentation.BaseView
 import tracker.common.presentation.vm.BaseViewModel
-import tracker.common.core.util.CrashlyticsUtil
+import tracker.common.core.util.CrashlyticsLogger
 
 abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
 
@@ -30,7 +30,7 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
             vm.view = this
 
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
     }
 
@@ -45,7 +45,7 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
             setupSwipeRefresh()
             enableBackNavigation()
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
 
     }
@@ -71,7 +71,7 @@ abstract class BaseFrag<VM: BaseViewModel> : Fragment(), BaseView {
         try {
             doOnResume()
         } catch (e: Exception) {
-            CrashlyticsUtil.logAndPrint(e)
+            CrashlyticsLogger.logAndPrint(e)
         }
     }
 

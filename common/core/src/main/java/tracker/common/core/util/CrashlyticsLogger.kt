@@ -1,14 +1,16 @@
 package tracker.common.core.util
 
-/**
- * Created by Sha on 10/15/17.
- */
 
-object CrashlyticsUtil {
+object CrashlyticsLogger {
 
     fun log(throwable: Throwable) {
         // In production we must uncomment
 //        Crashlytics.getInstance().core.logException(throwable)
+    }
+
+    fun logThrowable(error: String?) {
+        // In production we must uncomment
+//        Crashlytics.getInstance().core.logException(Throwable(error))
     }
 
     fun logAndPrint(throwable: Throwable) {

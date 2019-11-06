@@ -3,7 +3,7 @@ package tracker.common.core.picasso
 import android.graphics.*
 import com.squareup.picasso.Transformation
 import tracker.common.core.io.BitmapUtil
-import tracker.common.core.util.CrashlyticsUtil
+import tracker.common.core.util.CrashlyticsLogger
 
 class CircleTransform : Transformation {
     override fun transform(source: Bitmap): Bitmap {
@@ -51,7 +51,7 @@ class CircleTransform : Transformation {
             return bitmap
         } catch (e: Exception) {
             e.printStackTrace()
-            CrashlyticsUtil.log(e)
+            CrashlyticsLogger.log(e)
             source.recycle()
             return BitmapUtil.empty()
         }

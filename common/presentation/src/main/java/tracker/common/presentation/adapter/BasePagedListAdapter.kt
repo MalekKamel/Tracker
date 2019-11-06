@@ -3,7 +3,7 @@ package tracker.common.presentation.adapter
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import tracker.common.presentation.BaseView
-import tracker.common.core.util.CrashlyticsUtil
+import tracker.common.core.util.CrashlyticsLogger
 
 
 abstract class BasePagedListAdapter<T> constructor(protected var view: BaseView, diffCallback: DiffUtil.ItemCallback<T>)
@@ -16,7 +16,7 @@ abstract class BasePagedListAdapter<T> constructor(protected var view: BaseView,
             if( item != null) holder.bindView(item)
         } catch (e: Exception) {
             e.printStackTrace()
-            CrashlyticsUtil.log(e)
+            CrashlyticsLogger.log(e)
         }
 
     }

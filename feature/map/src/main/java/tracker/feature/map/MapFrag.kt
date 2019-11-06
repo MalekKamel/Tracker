@@ -13,10 +13,12 @@ import tracker.common.core.util.disposeBy
 import tracker.common.maps.GoogleMapSetup
 import tracker.common.maps.MapRouteHelper
 import tracker.common.maps.drawRoute
+import tracker.common.maps.service.LocationTrackerService
 import tracker.common.presentation.SystemOverlayHelper
 import tracker.common.presentation.ext.show
 import tracker.common.presentation.frag.BaseFrag
 import tracker.feature.head.AppHead
+import tracker.feature.head.AppHeadService
 import tracker.feature.map.di.injectFeature
 
 
@@ -65,10 +67,7 @@ class MapFrag : BaseFrag<MapVm>() {
     }
 
     private fun showAppHead() {
-        activity?.apply {
-            if(!SystemOverlayHelper.checkDrawOverlayPermission(this)) return
-            startService(Intent(this, AppHead::class.java))
-        }
+        activity?.apply { AppHead.show(this) }
     }
 
     private fun setupMap() {
@@ -85,6 +84,8 @@ class MapFrag : BaseFrag<MapVm>() {
     }
 
     private fun showRouteInfo(result: DirectionsResult) {
+        activity?.apply { LocationTrackerService.startIfPermissionGranted(this) }
+
         if (result.routes.isNullOrEmpty()) {
             showErrorInFlashBar(R.string.no_route)
             return

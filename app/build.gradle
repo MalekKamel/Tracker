@@ -21,14 +21,11 @@ android {
         }
 
     }
-    dynamicFeatures = [Module.splash]
 
-    dexOptions {
-                preDexLibraries false
-            }
 }
 
 dependencies {
+    implementation project(Module.splash)
     implementation project(Module.map)
     implementation project(Module.presentation)
     implementation project(Module.data)
