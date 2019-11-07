@@ -13,7 +13,7 @@ object DirectionsHelper {
      fun directions(origin: String, destination: String, mode: TravelMode): DirectionsResult {
         val geoApiContext =  GeoApiContext.Builder()
                 .queryRateLimit(3)
-                .apiKey(CoreApp.string(R.string.geo_api_code))
+                .apiKey(CoreApp.string(R.string.google_map_api_key))
                 .connectTimeout(1, TimeUnit.SECONDS)
                 .readTimeout(1, TimeUnit.SECONDS)
                 .writeTimeout(1, TimeUnit.SECONDS)
