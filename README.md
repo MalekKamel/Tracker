@@ -20,7 +20,7 @@ Screenshots of Map and App Head
  - [ ] JUnit & Mockito
 
 ## Build The App
-To build the app, you need to add Google Map' API key in resources with ID `geo_api_code`.
+To build the app, you need to add Google Map' API key in resources with ID `google_map_api_key`.
 
  ### License
 ```
