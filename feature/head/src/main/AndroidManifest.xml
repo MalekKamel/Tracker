@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="restaurants.feature.head"
-    xmlns:dist="http://schemas.android.com/apk/distribution"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:dist="http://schemas.android.com/apk/distribution">
 
     <dist:module
         dist:instant="false"
         dist:onDemand="false">
         <dist:fusing dist:include="true" />
     </dist:module>
-
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-
-    <application >
-
-        <service
-            android:name="tracker.feature.head.AppHeadService"
-            android:enabled="true"
-            android:exported="false"/>
-    </application>
 
 </manifest>

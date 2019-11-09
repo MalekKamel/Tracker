@@ -35,7 +35,7 @@ class SharedPref(private val pref: SharedPreferences) {
         editor.apply()
     }
 
-    private fun getString(key: Key, def: String): String{
+    private fun getString(key: Key, def: String): String? {
         return pref.getString(key.name, def)
     }
 
@@ -62,26 +62,6 @@ class SharedPref(private val pref: SharedPreferences) {
 
     ///// Impl
 
-    private enum class Key{
-        TOKEN,
-        REFRESH_TOKEN
-    }
-
-    var token: String
-        get() = getString(Key.TOKEN, "")
-        set(value) {
-            putString(value, Key.TOKEN)
-        }
-
-    var refreshToken: String
-        get() = getString(Key.REFRESH_TOKEN, "")
-        set(value) {
-            putString(value, Key.REFRESH_TOKEN)
-        }
-
-    fun isLogged(): Boolean = token.isNotEmpty()
-
-
-
+    private enum class Key{}
 
 }

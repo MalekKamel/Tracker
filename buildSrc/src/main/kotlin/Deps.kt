@@ -4,7 +4,7 @@ object Versions {
     const val androidx_appCompat = "1.0.0-beta01"
     const val androidx_core = "1.0.0-beta01"
     const val androidx_recyclerView = "1.0.0"
-    const val materialDesign = "1.0.0-rc01"
+    const val materialDesign = "1.2.0-alpha01"
     const val androidx_preference = "1.0.0-beta01"
     const val androidx_gridlayout = "1.0.0-beta01"
     const val androidx_cardView = "1.0.0-beta01"
@@ -35,11 +35,13 @@ object Versions {
     const val sha_navigator = "1.5.0"
     const val sha_rxRequester = "0.6.0"
     const val sha_rxLocation = "1.9.0@aar"
+    const val sha_appHead = "0.1.0"
     const val flashBar = "1.0.3"
     const val androidx_junit = "1.1.1"
     const val androidx_espressoCore = "3.2.0"
     const val androidx_coreKtx = "1.1.0"
     const val androidx_paging = "2.0.0-rc01"
+    const val androidx_swipeRefreshLayout = "1.0.0"
     const val playServices_androidMaps = "17.0.0"
     const val playServices_maps = "0.10.0"
     const val playServices_location = "16.0.0"
@@ -93,6 +95,7 @@ object Deps {
     const val androidx_lifeCycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:${Versions.androidx_lifeCycle}"
     const val androidx_coreKtx = "androidx.core:core-ktx:${Versions.androidx_coreKtx}"
     const val androidx_paging = "androidx.paging:paging-runtime:${Versions.androidx_paging}"
+    const val androidx_swipeRefreshLayout= "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.androidx_swipeRefreshLayout}"
     // </editor-fold>
 
     // <editor-fold desc="parceler">
@@ -136,6 +139,7 @@ object Deps {
     const val sha_navigator = "com.github.ShabanKamell:Navigator:${Versions.sha_navigator}"
     const val sha_rxRequester = "com.github.ShabanKamell:RxRequester:${Versions.sha_rxRequester}"
     const val sha_rxLocation = "com.sha.kamel:rx-location:${Versions.sha_rxLocation}"
+    const val sha_appHead = "com.github.ShabanKamell:AppHead:${Versions.sha_appHead}"
 
     const val flashBar = "com.andrognito.flashbar:flashbar:${Versions.flashBar}"
 

@@ -7,11 +7,6 @@ import android.os.Build
 import androidx.core.content.ContextCompat
 import tracker.common.core.CoreApp
 
-
-/**
- * Created by Sha on 10/13/17.
- */
-
 object ServiceHelper {
 
     fun startForegroundService(clazz: Class<*>) {

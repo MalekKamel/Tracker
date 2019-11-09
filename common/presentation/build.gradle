@@ -15,6 +15,7 @@ dependencies {
     implementation Deps.sha_formValidator
     api Deps.sha_navigator
     api Deps.sha_rxRequester
+    api Deps.androidx_swipeRefreshLayout
 
     api Deps.sdp
     api Deps.ssp
