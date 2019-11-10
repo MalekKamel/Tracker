@@ -35,7 +35,7 @@ object Versions {
     const val sha_navigator = "1.5.0"
     const val sha_rxRequester = "0.6.0"
     const val sha_rxLocation = "1.9.0@aar"
-    const val sha_appHead = "0.1.0"
+    const val sha_appHead = "0.3.2"
     const val flashBar = "1.0.3"
     const val androidx_junit = "1.1.1"
     const val androidx_espressoCore = "3.2.0"
